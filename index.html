@@ -24,17 +24,137 @@
       color: #333;
       text-align: center;
       animation: fadeInBody 2s ease-in;
+      overflow-x: hidden;
+      position: relative;
     }
 
     @keyframes fadeInBody {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+/* Floating Flowers Background */
+    .floating-flowers {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
 
+    .flower {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0.7;
+      animation: float 15s infinite linear;
+    }
+
+    .flower:nth-child(1) { left: 10%; animation-delay: 0s; color: #ff69b4; }
+    .flower:nth-child(2) { left: 20%; animation-delay: 2s; color: #ffc0cb; }
+    .flower:nth-child(3) { left: 30%; animation-delay: 4s; color: #ffb6c1; }
+    .flower:nth-child(4) { left: 40%; animation-delay: 6s; color: #ff1493; }
+    .flower:nth-child(5) { left: 50%; animation-delay: 8s; color: #db7093; }
+    .flower:nth-child(6) { left: 60%; animation-delay: 10s; color: #ff69b4; }
+    .flower:nth-child(7) { left: 70%; animation-delay: 12s; color: #ffc0cb; }
+    .flower:nth-child(8) { left: 80%; animation-delay: 14s; color: #ffb6c1; }
+    .flower:nth-child(9) { left: 90%; animation-delay: 16s; color: #ff1493; }
+    .flower:nth-child(10) { left: 5%; animation-delay: 18s; color: #db7093; }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Side Decorative Flowers */
+    .side-flowers {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      opacity: 0.3;
+      z-index: -1;
+      animation: sway 4s ease-in-out infinite;
+    }
+
+    .side-flowers.left {
+      left: 5px;
+      animation-delay: 0s;
+    }
+
+    .side-flowers.right {
+      right: 5px;
+      animation-delay: 2s;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: translateY(-50%) rotate(-5deg); }
+      50% { transform: translateY(-50%) rotate(5deg); }
+    }
+
+    /* Petal Animation */
+    .petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .petal {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ff69b4, #ffc0cb);
+      border-radius: 50% 50% 50% 0;
+      animation: fall 12s infinite linear;
+    }
+
+    .petal:nth-child(odd) {
+      animation-duration: 10s;
+      background: radial-gradient(circle, #ffb6c1, #ffc0cb);
+    }
+
+    .petal:nth-child(1) { left: 15%; animation-delay: 1s; }
+    .petal:nth-child(2) { left: 25%; animation-delay: 3s; }
+    .petal:nth-child(3) { left: 35%; animation-delay: 5s; }
+    .petal:nth-child(4) { left: 45%; animation-delay: 7s; }
+    .petal:nth-child(5) { left: 55%; animation-delay: 9s; }
+    .petal:nth-child(6) { left: 65%; animation-delay: 11s; }
+    .petal:nth-child(7) { left: 75%; animation-delay: 13s; }
+    .petal:nth-child(8) { left: 85%; animation-delay: 15s; }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
     header {
       background: #ffd1dc;
       padding: 20px;
       animation: slideInDown 1s ease-in-out;
+      position: relative;
+      z-index: 1;
     }
 
     @keyframes slideInDown {
@@ -57,6 +177,12 @@
 
     .content {
       padding: 30px 20px;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      margin: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .content h2 {
@@ -142,35 +268,59 @@
       color: #555;
       margin-top: 40px;
       animation: fadeInBody 2s ease-in;
-    }
-    /* Floating Flower Animation */
-    .floating-flower {
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      pointer-events: none;
+      position: relative;
       z-index: 1;
-      animation: floatFlower 20s linear infinite;
-      opacity: 0.8;
     }
-
-    @keyframes floatFlower {
-      0% {
-        transform: translateY(100vh) translateX(0);
-        opacity: 0;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .flower {
+        font-size: 16px;
       }
-      30% {
-        opacity: 0.8;
+      .side-flowers {
+        font-size: 24px;
       }
-      100% {
-        transform: translateY(-10vh) translateX(50px);
-        opacity: 0;
+      .content {
+        margin: 10px;
+        padding: 20px 15px;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- Floating Flowers Animation -->
+  <div class="floating-flowers">
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🌷</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌻</div>
+    <div class="flower">🌷</div>
+  </div>
+
+  <!-- Side Decorative Flowers -->
+  <div class="side-flowers left">
+    🌹<br>🌸<br>🌺<br>🌼<br>🌷
+  </div>
+  <div class="side-flowers right">
+    🌷<br>🌼<br>🌺<br>🌸<br>🌹
+  </div>
+
+  <!-- Falling Petals -->
+  <div class="petals">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+  </div>
   <header>
     <div class="guest-name" id="guestName">You're invited!</div>
   </header>
@@ -228,25 +378,29 @@
     if (guest) {
       document.getElementById("guestName").textContent = `Dear ${guest}, you're invited!`;
     }
-  </script>
-  <!-- Floating Flowers Script -->
-  <script>
-    const flowerCount = 15;
-    const flowerImages = [
-      'https://cdn-icons-png.flaticon.com/512/733/733585.png',
-      'https://cdn-icons-png.flaticon.com/512/2471/2471403.png',
-      'https://cdn-icons-png.flaticon.com/512/2882/2882344.png'
-    ];
 
-    for (let i = 0; i < flowerCount; i++) {
-      const img = document.createElement('img');
-      img.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
-      img.classList.add('floating-flower');
-      img.style.left = Math.random() * 100 + 'vw';
-      img.style.animationDelay = Math.random() * 20 + 's';
-      img.style.animationDuration = 10 + Math.random() * 20 + 's';
-      document.body.appendChild(img);
+    // Add more dynamic flowers periodically
+    function createRandomFlower() {
+      const flowers = ['🌸', '🌺', '🌼', '🌻', '🌷', '🌹', '💐'];
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + '%';
+      flower.style.animationDuration = (10 + Math.random() * 10) + 's';
+      flower.style.color = ['#ff69b4', '#ffc0cb', '#ffb6c1', '#ff1493', '#db7093'][Math.floor(Math.random() * 5)];
+      
+      document.querySelector('.floating-flowers').appendChild(flower);
+      
+      // Remove flower after animation completes
+      setTimeout(() => {
+        if (flower.parentNode) {
+          flower.parentNode.removeChild(flower);
+        }
+      }, 20000);
     }
+
+    // Create new flowers every 3 seconds
+    setInterval(createRandomFlower, 3000);
   </script>
 </body>
 </html>
