@@ -9,59 +9,51 @@
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background: #fef9f4;
+      background: #fff0f5;
       color: #333;
       text-align: center;
     }
     header {
-      background: #ffb6b9;
+      background: #ffd1dc;
       padding: 20px;
-    }
-    header img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      margin-bottom: 20px;
     }
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3em;
       margin: 0;
+      color: #d63384;
     }
     .guest-name {
-      margin-top: 10px;
       font-size: 1.2em;
+      margin-top: 10px;
     }
     .content {
       padding: 30px 20px;
     }
     .content h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.2em;
+      font-size: 2.5em;
       margin: 20px 0 10px;
+      color: #d63384;
     }
     .content p {
       font-size: 1.1em;
-      max-width: 600px;
+      max-width: 800px;
       margin: 10px auto;
+      line-height: 1.6;
     }
-    .venue {
-      margin-top: 30px;
-    }
-    .venue a {
-      color: #d6336c;
-      text-decoration: none;
+    .highlight {
       font-weight: bold;
+      color: #c2185b;
     }
-    iframe {
-      margin-top: 20px;
-      border: none;
-      width: 90%;
-      max-width: 640px;
-      height: 700px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    .section-title {
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-top: 30px;
+      color: #c2185b;
+    }
+    .rsvp {
+      margin-top: 40px;
     }
     footer {
       background: #ffe0e3;
@@ -69,32 +61,88 @@
       font-size: 0.9em;
       color: #555;
     }
+    .icon-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 40px;
+    }
+    .icon-box {
+      text-align: center;
+      max-width: 200px;
+    }
+    .icon-box img {
+      width: 60px;
+      height: auto;
+    }
+    .icon-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #c2185b;
+    }
+    .icon-text {
+      font-size: 1em;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://images.unsplash.com/photo-1605477091683-940208fefc1a?auto=format&fit=crop&w=1350&q=80" alt="Wedding Banner">
-    <h1>Harsha & future wife name</h1>
+    <h1>Harsha & Ananya</h1>
     <div class="guest-name" id="guestName">You're invited!</div>
   </header>
 
   <div class="content">
-    <h2>my future Wedding Invitation</h2>
-    <p>We joyfully invite you to celebrate our wedding</p>
-    <p><strong>Date:</strong> 24 December 2025<br><strong>Time:</strong> 11:30 AM</p>
+    <h2>Wedding Invitation</h2>
 
-    <div class="venue">
-      <p><strong>Venue:</strong> Sri Venkateshwara Function Hall</p>
-      <p><a href="https://maps.google.com" target="_blank">View Location on Google Maps</a></p>
+    <p><span class="highlight">Chi. Ry. Madhu C.A.</span> M.Sc (MB)</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/3176/3176366.png" alt="Handshake" style="width: 40px; margin: 10px auto;">
+    <p><span class="highlight">Chi. Sou. Shwetha P.V.</span> B.E. (E.C)</p>
+
+    <p>(D/o. Smt. Lakshmidevi & Sri V. Venkataravanappa)<br>
+    8th Ward, Bagepalli</p>
+
+    <p>On <strong>Sunday, 27th July 2025</strong><br>
+    at: <span class="highlight">" S.L.N. Convention Hall "</span><br>
+    Jakkanayakanahalli, Bagepalli - Chintamani Road</p>
+
+    <div class="section-title">Awaiting your presence:</div>
+    <p><span class="highlight">Smt. Shanthamma & Sri Ramappa Brother</span><br>
+    <span class="highlight">Smt. Saraswathamma</span> – Grama Panchayath President<br>
+    & <span class="highlight">Sri R. Ashwathappa</span> – Taluk Panchayath Ex President</p>
+
+    <div class="icon-section">
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/424/424062.png" alt="Reception">
+        <div class="icon-title">Reception</div>
+        <div class="icon-text">26-07-2025, Saturday<br>06:30 PM Onwards</div>
+      </div>
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/860/860365.png" alt="Lagna">
+        <div class="icon-title">Lagna</div>
+        <div class="icon-text">27-07-2025, Sunday<br>Morning</div>
+      </div>
+      <div class="icon-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/4320/4320252.png" alt="Muhurtam">
+        <div class="icon-title">Muhurtam</div>
+        <div class="icon-text">27-07-2025, Sunday<br>04:00 AM to 05:30 AM</div>
+      </div>
     </div>
 
-    <p>“Two hearts. One love. Join us on our big day!”</p>
+    <div class="rsvp">
+      <h2>RSVP</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUzrsEY9SlRMfKJY-eT2WkZ2FEXAMPLEFORM/viewform?embedded=true"
+              width="100%" height="700">
+        Loading…
+      </iframe>
+      <p>(Kindly RSVP by July 1st)</p>
+    </div>
   </div>
 
-  
-
   <footer>
-    With love, Harsha & future wife name
+    With love, Madhu & Shwetha
   </footer>
 
   <script>
