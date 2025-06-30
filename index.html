@@ -15,7 +15,14 @@
     }
     header {
       background: #ffb6b9;
-      padding: 40px 20px;
+      padding: 20px;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
     }
     h1 {
       font-family: 'Great Vibes', cursive;
@@ -31,7 +38,7 @@
     }
     .content h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin: 20px 0 10px;
     }
     .content p {
@@ -47,6 +54,15 @@
       text-decoration: none;
       font-weight: bold;
     }
+    iframe {
+      margin-top: 20px;
+      border: none;
+      width: 90%;
+      max-width: 640px;
+      height: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
     footer {
       background: #ffe0e3;
       padding: 15px;
@@ -57,7 +73,8 @@
 </head>
 <body>
   <header>
-    <h1>Harsha & wife</h1>
+    <img src="https://images.unsplash.com/photo-1605477091683-940208fefc1a?auto=format&fit=crop&w=1350&q=80" alt="Wedding Banner">
+    <h1>Harsha & shreya</h1>
     <div class="guest-name" id="guestName">You're invited!</div>
   </header>
 
@@ -74,8 +91,14 @@
     <p>“Two hearts. One love. Join us on our big day!”</p>
   </div>
 
+  <div class="content">
+    <h2>RSVP</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUzrsEY9SlRMfKJY-eT2WkZ2FEXAMPLEFORM/viewform?embedded=true">Loading…</iframe>
+    <p>(Please RSVP by December 1st)</p>
+  </div>
+
   <footer>
-    With love, Harsha & example
+    With love, Harsha & shreya
   </footer>
 
   <script>
