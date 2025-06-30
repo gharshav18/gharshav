@@ -143,6 +143,30 @@
       margin-top: 40px;
       animation: fadeInBody 2s ease-in;
     }
+    /* Floating Flower Animation */
+    .floating-flower {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      pointer-events: none;
+      z-index: 1;
+      animation: floatFlower 20s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatFlower {
+      0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+      }
+      30% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) translateX(50px);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
@@ -203,6 +227,25 @@
     const guest = params.get("guest");
     if (guest) {
       document.getElementById("guestName").textContent = `Dear ${guest}, you're invited!`;
+    }
+  </script>
+  <!-- Floating Flowers Script -->
+  <script>
+    const flowerCount = 15;
+    const flowerImages = [
+      'https://cdn-icons-png.flaticon.com/512/733/733585.png',
+      'https://cdn-icons-png.flaticon.com/512/2471/2471403.png',
+      'https://cdn-icons-png.flaticon.com/512/2882/2882344.png'
+    ];
+
+    for (let i = 0; i < flowerCount; i++) {
+      const img = document.createElement('img');
+      img.src = flowerImages[Math.floor(Math.random() * flowerImages.length)];
+      img.classList.add('floating-flower');
+      img.style.left = Math.random() * 100 + 'vw';
+      img.style.animationDelay = Math.random() * 20 + 's';
+      img.style.animationDuration = 10 + Math.random() * 20 + 's';
+      document.body.appendChild(img);
     }
   </script>
 </body>
